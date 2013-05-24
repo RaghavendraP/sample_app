@@ -4,11 +4,16 @@ ruby '1.9.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0.rc1'
+gem 'pg', '0.12.2'
 
 # Use sqlite3 as the database for Active Record
 group :development, :test do
 	gem 'sqlite3'
 	gem 'rspec-rails', '2.11.0'
+	gem 'guard-rspec', '1.2.1'
+	gem 'guard-spork', '1.2.0'
+	gem 'childprocess','0.3.6'
+	gem 'spork','0.9.2'
 end
 
 group :assets do
@@ -42,6 +47,9 @@ end
 
 group :test do 
 	gem 'capybara', '1.1.2'
+	gem 'rb-fchange','0.0.5'
+	gem 'rb-notifu','0.0.4'
+	gem 'win32console'
 end
 
 group :production do
