@@ -6,6 +6,7 @@ ruby '1.9.3'
 gem 'rails', '4.0.0.rc1'
 gem 'bootstrap-sass','2.1'
 gem 'pg', '0.12.2'
+gem 'bcrypt-ruby', '3.0.1'
 
 # Use sqlite3 as the database for Active Record
 group :development, :test do
@@ -17,6 +18,12 @@ group :development, :test do
 	gem 'spork','0.9.2'
 end
 
+group :development do 
+	gem 'annotate', '2.5.0'
+end
+
+#To use old protection model for params.
+gem 'protected_attributes'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0.rc1'
