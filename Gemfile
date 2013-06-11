@@ -5,7 +5,7 @@ ruby '1.9.3'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0.rc1'
 gem 'bootstrap-sass','2.1'
-gem 'pg', '0.12.2'
+#gem 'pg', '0.12.2'
 gem 'bcrypt-ruby', '3.0.1'
 gem 'faker', '1.0.1'
 gem 'will_paginate', '3.0.3'
@@ -61,6 +61,8 @@ group :test do
 	gem 'rb-notifu','0.0.4'
 	gem 'win32console'
 	gem 'factory_girl_rails','4.1.0'
+	gem 'cucumber-rails', '1.2.1', :require => false
+	gem 'database_cleaner', '0.7.0'
 end
 
 group :production do
