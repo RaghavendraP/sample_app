@@ -76,12 +76,25 @@ describe "Authentication" do
 
 				describe "submitting to the update section" do
 					before { put user_path(user) }
-					specify { response.should redirect_to(signin_path) }
+					specify { expect(response).should redirect_to(signin_path) }
 				end
 
 				describe "visiting the user index" do
 					before { visit users_path }
 					it { should have_selector('title', text: 'Sign in') }
+				end
+			end
+
+			describe "in the Microposts Controller" do
+
+				describe "submitting to the create action" do
+					before { post microposts_path }
+					specify { expect(response).to redirect_to(signin_path) }
+				end
+
+				describe "submitting to the destory action" do
+					before { delete micropost_path(FactoryGirl.create(:micropost)) }
+					specify { expect(response).to redirect_to(signin_path) }
 				end
 			end
 		end
@@ -98,7 +111,7 @@ describe "Authentication" do
 
 			describe "submitting a PUT request to the Users#update action" do
 				before { put user_path(wronguser) }
-				specify { response.should redirect_to(root_path) }
+				specify { expect(response).should redirect_to(root_path) }
 			end
 		end
 
@@ -110,7 +123,7 @@ describe "Authentication" do
 
 			describe "submitting a DELETE request to the User#destory action " do
 				before { delete user_path(user) }
-				specify { response.should redirect_to(root_path) }
+				specify { expect(response).should redirect_to(root_path) }
 			end
 		end
 	end
